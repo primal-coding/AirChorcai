@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainWindowController">
+   <children>
+      <Label fx:id="label" alignment="CENTER" layoutY="114.0" text="Welcome to AirCorchai - Please login" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" layoutY="31.0" spacing="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <ImageView fitHeight="47.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ACLogo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <MenuBar fx:id="menuBar" layoutX="14.0" layoutY="14.0" prefHeight="31.0" prefWidth="800.0" AnchorPane.bottomAnchor="469.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Login">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleLogAdmin" text="Login as Admin " />
+                  <MenuItem mnemonicParsing="false" onAction="#handleLogCustomer" text="Login as Customer" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleRegister" text="Register" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <GridPane fx:id="gridAdmin" hgap="5.0" layoutY="205.0" vgap="5.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="plModel" alignment="CENTER_RIGHT" promptText="Enter Model" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text=" Arrival" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <Label text=" Departure" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <Label text=" Plane" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Label text=" Model" GridPane.rowIndex="2" />
+            <Label text="FLIGHT" textFill="#1204e0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label text="AIRPORT" textFill="#1204e0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="15.0" prefWidth="103.0" text="PLANE" textFill="#1204e0" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label text=" Departure" GridPane.rowIndex="3" />
+            <Label text=" Arrival" GridPane.rowIndex="4" />
+            <Label text=" Name" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label text=" Date" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Label text=" Hour" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <Label text=" Minutes" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+            <Button fx:id="plAdd" mnemonicParsing="false" onAction="#bPlaneAdd" text="Add Plane" textFill="#1204e0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="airAdd" mnemonicParsing="false" onAction="#bAirAdd" text="Add Airport" textFill="#1204e0" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="flAdd" mnemonicParsing="false" onAction="#bFlightAdd" text="Add Flight" textFill="#1204e0" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <TextField fx:id="airName" alignment="CENTER_RIGHT" promptText="Enter name" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <ComboBox fx:id="plDep" onAction="#cbPlaneDep" prefWidth="150.0" promptText="Select Departure" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBox fx:id="plArr" onAction="#cbPlaneArr" prefWidth="150.0" promptText="Select Arrival" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ComboBox fx:id="flPlane" onAction="#cbFlightPlane" prefWidth="150.0" promptText="Select Plane" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <ComboBox fx:id="flDep" onAction="#cbFlightDep" prefWidth="150.0" promptText="Select Departure" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <ComboBox fx:id="flArr" onAction="#cbFlightArr" prefWidth="150.0" promptText="Select Arrival" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <DatePicker fx:id="flDP" onAction="#dpFlight" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <TextField fx:id="flHour" alignment="CENTER_RIGHT" promptText="Enter time" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+            <TextField fx:id="flMinute" alignment="CENTER_RIGHT" promptText="Enter time" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+            <Button fx:id="plList" mnemonicParsing="false" onAction="#bPlaneList" text="List Planes" textFill="#dd0d0d" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="airList" mnemonicParsing="false" onAction="#bAirList" text="List Airports" textFill="#dd0d0d" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="flList" mnemonicParsing="false" onAction="#bFlightList" text="List Flights" textFill="#dd0d0d" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Label text=" Price  €" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+            <TextField fx:id="flPrice" alignment="CENTER_RIGHT" text="0.0" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </GridPane>
+      <GridPane fx:id="gridCustomer" hgap="5.0" layoutY="295.0" vgap="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Select your seat number:" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+            <CheckBox fx:id="cbVF" mnemonicParsing="false" text="Add VIP facility" GridPane.rowIndex="5" />
+            <CheckBox fx:id="cbEL" mnemonicParsing="false" text="Add extra luggage" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+            <TextField fx:id="txtSN" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <Button fx:id="btnBT" mnemonicParsing="false" text="Buy Ticket" textFill="#1c2fd7" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnP" mnemonicParsing="false" text="Previous" GridPane.halignment="RIGHT">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+            <Button fx:id="btnN" mnemonicParsing="false" text="Next" GridPane.columnIndex="5">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+            <TextArea fx:id="taC" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowSpan="4" />
+            <CheckBox fx:id="cbRT" mnemonicParsing="false" text="Return ticket" GridPane.rowIndex="6" />
+            <Button fx:id="btnUD" mnemonicParsing="false" onAction="#btUpdateDetails" text="Update Details" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="7" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </GridPane>
+   </children>
+</AnchorPane>
